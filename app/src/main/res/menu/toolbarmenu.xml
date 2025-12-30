@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- "Mark Favorite", must appear as action button if possible. -->
+    <item
+        android:id="@+id/mi_about"
+        android:title="@string/mi_about_txt"
+        app:showAsAction="never" />
+
+    <!-- Settings, must always be in the overflow. -->
+    <item
+        android:id="@+id/mi_close"
+        android:title="@string/mi_close_btn"
+        app:showAsAction="never" />
+
+</menu>

@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Landscapes 3D v013</string>
+    <string name="mi_about_txt">About…</string>
+    <string name="mi_close_btn">Close App</string>
+    <string name="about_popup_txt">Graphics demo written by DK</string>
+    <string name="about_popup_close_btn">Close</string>
+    <string name="txt_max_detail_toast">Maximum detail level %1$s reached!
+      \nAdd water effects if at the highest level - try it!</string>
+    <string name="txt_min_detail_toast">Min detail level: 0</string>
+    <string name="lblCurrentDetail">Current Detail Level</string>
+    <string name="lblCurrentDetailNr">Current Detail Level %1$s of max. %2$s</string>
+    <string name="btnNew">New…</string>
+    <string name="btnIncDetail">Increase</string>
+    <string name="btnDecDetail">Decrease</string>
+    <string name="lblDetailLevel">Detail Level</string>
+    <string name="labWater">Add Water</string>
+    <string name="btn5Rivers">Fountains</string>
+    <string name="btnFlood">Flood</string>
+    <string name="spnPrompt">Draw like</string>
+    <string name="btnDrawPoints">Small Points</string>
+    <string name="btnDrawBigPoints">Big Points</string>
+    <string name="btnDrawLinesX">Lines X</string>
+    <string name="btnDrawLinesY">Lines Y</string>
+    <string name="btnDrawSquares">3D Squares</string>
+    <string name="btnDrawTriangles">3D Triangles</string>
+    <string name="btnDrawShaded">Shaded</string>
+</resources>
