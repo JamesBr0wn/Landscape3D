@@ -20,12 +20,46 @@ public class LandscapeView  extends View {
         Paint thePaint;
     }
 
+    /*
+    class ShadedPathAndPaintHolder extends PathAndPaintHolder {
+
+        void setFilled(int orient) {
+            thePath.reset(); // always a new path
+            thePath.setFillType(Path.FillType.EVEN_ODD);
+            thePaint.setStyle(Paint.Style.FILL_AND_STROKE); // solid
+            switch (orient) {
+                case 0:
+                    thePaint.setColor(Color.rgb(10, 230, 10));
+                    break;
+                case 1:
+                    thePaint.setColor(Color.rgb(10, 200, 10));
+                    break;
+                case 2:
+                    thePaint.setColor(Color.rgb(10, 180, 10));
+                    break;
+                case 3:
+                    thePaint.setColor(Color.rgb(10, 150, 10));
+                    break;
+                default:
+                    return;
+            }
+        }
+        void setWireFrame() {
+            thePath.reset(); // always a new path
+            thePath.setFillType(Path.FillType.EVEN_ODD);
+            thePaint.setStyle(Paint.Style.STROKE); // line
+            thePaint.setColor(Color.WHITE);
+        }
+    }
+    */
+
     PathAndPaintHolder areaRect = new PathAndPaintHolder(); // the drawing area
     PathAndPaintHolder whitelines = new PathAndPaintHolder(); // white wireframe
     PathAndPaintHolder riverlines = new PathAndPaintHolder(); // blue rivers
     PathAndPaintHolder oceanwater = new PathAndPaintHolder(); // blue flood / ocean
     PathAndPaintHolder lakewater = new PathAndPaintHolder(); // blue lakes
     PathAndPaintHolder[] shadedareas = new PathAndPaintHolder[4];
+    // ShadedPathAndPaintHolder shadeddraw = new ShadedPathAndPaintHolder();
 
     class Point3D {
         double x,y,z;
@@ -356,19 +390,97 @@ public class LandscapeView  extends View {
                 shadedareas[orient].thePath.lineTo(sx4, sy4);
                 shadedareas[orient].thePath.lineTo(sx3, sy3);
                 shadedareas[orient].thePath.close();
-
-                /*
-                // white triangles around
-                shadedareas[orient].thePath.moveTo(sx1, sy1);
-                shadedareas[orient].thePath.lineTo(sx2, sy2);
-                shadedareas[orient].thePath.lineTo(sx3, sy3);
-                shadedareas[orient].thePath.lineTo(sx1, sy1);
-                shadedareas[orient].thePath.lineTo(sx4, sy4);
-                shadedareas[orient].thePath.lineTo(sx3, sy3);
-                */
             }
         }
     }
+
+    /*
+    //works but waaay too slow
+    private void drawShaded2(@NonNull Canvas canvas, int delta, int wx, int wy) {
+        float sx1, sy1, sx2, sy2, sx3, sy3, sx4, sy4;
+        for (int y = LandscapeData.MAX_ARRAYDIM-delta; y >= 0; y -= delta) {
+            for (int x = LandscapeData.MAX_ARRAYDIM-delta; x >= 0; x -= delta) {
+                // 2 triangles: p1: (x,y) - p2: (x,y+delta) - p3: (x+dela, y+delta)
+                //              p1: (x,y) - p4: (x+delta,y) - p3: (x+delta, y+delta)
+
+                Point3D p1, p2, p3, p4;
+                int orient;
+                int x1,x2,x3,x4;
+                int y1,y2,y3,y4;
+                double z1, z2, z3,z4;
+                x1 = x;
+                y1 = y;
+                z1 = LandscapeData.getLandscape().getLandscapePoint(x1,y1);
+                x2 = x;
+                y2 = y+delta;
+                z2 = LandscapeData.getLandscape().getLandscapePoint(x2,y2);
+                x3 = x+delta;
+                y3 = y+delta;
+                z3 = LandscapeData.getLandscape().getLandscapePoint(x3,y3);
+                x4 = x+delta;
+                y4 = y;
+                z4 = LandscapeData.getLandscape().getLandscapePoint(x4,y4);
+
+                p1 = new Point3D((double)x1, (double)y1, z1);
+                p2 = new Point3D((double)x2, (double)y2, z2);
+                p3 = new Point3D((double)x3, (double)y3, z3);
+                p4 = new Point3D((double)x4, (double)y4, z4);
+
+                sx1 = transformToOutputX(x1, y1, wx);
+                sy1 = transformToOutputY(x1, y1, wy);
+                sx2 = transformToOutputX(x2, y2, wx);
+                sy2 = transformToOutputY(x2, y2, wy);
+                sx3 = transformToOutputX(x3, y3, wx);
+                sy3 = transformToOutputY(x3, y3, wy);
+                sx4 = transformToOutputX(x4, y4, wx);
+                sy4 = transformToOutputY(x4, y4, wy);
+
+                // first triangle
+                orient = orientation(p1,p2,p3);
+                // Log.i("diudkr", "LandscapeView1: x = " + x + " y = " + y + " ori = " + orient);
+                if (orient == 0) {
+                    Log.i("diudkr", "LandscapeView1: orientation = 0!!");
+                    return;
+                }
+                orient--;
+                shadeddraw.setFilled(orient);
+                shadeddraw.thePath.moveTo(sx1, sy1);
+                shadeddraw.thePath.lineTo(sx2, sy2);
+                shadeddraw.thePath.lineTo(sx3, sy3);
+                shadeddraw.thePath.close();
+                canvas.drawPath(shadeddraw.thePath, shadeddraw.thePaint);
+                // white triangles around
+                shadeddraw.setWireFrame();
+                shadeddraw.thePath.moveTo(sx1, sy1);
+                shadeddraw.thePath.lineTo(sx2, sy2);
+                shadeddraw.thePath.lineTo(sx3, sy3);
+                shadeddraw.thePath.lineTo(sx1, sy1);
+                canvas.drawPath(shadeddraw.thePath, shadeddraw.thePaint);
+
+                // second triangle
+                orient = orientation(p1,p4,p3);
+                // Log.i("diudkr", "LandscapeView2: x = " + x + " y = " + y + " ori = " + orient);
+                if (orient == 0) {
+                    Log.i("diudkr", "LandscapeView2: orientation = 0!!");
+                    return;
+                }
+                orient--;
+                shadeddraw.setFilled(orient);
+                shadeddraw.thePath.moveTo(sx1, sy1);
+                shadeddraw.thePath.lineTo(sx4, sy4);
+                shadeddraw.thePath.lineTo(sx3, sy3);
+                shadeddraw.thePath.close();
+                canvas.drawPath(shadeddraw.thePath, shadeddraw.thePaint);
+                // white triangles around
+                shadeddraw.thePath.moveTo(sx1, sy1);
+                shadeddraw.thePath.lineTo(sx4, sy4);
+                shadeddraw.thePath.lineTo(sx3, sy3);
+                shadeddraw.thePath.lineTo(sx1, sy1);
+                canvas.drawPath(shadeddraw.thePath, shadeddraw.thePaint);
+            }
+        }
+    }
+    */
 
     private void drawRiver(int wx, int wy) {
         float sx0,sy0;
@@ -452,7 +564,9 @@ public class LandscapeView  extends View {
         int wx = this.getWidth();
         int wy = this.getHeight();
         areaRect.thePath.reset();
+        areaRect.thePath.setFillType(Path.FillType.EVEN_ODD);
         areaRect.thePath.addRect(0, 0, wx, wy, Path.Direction.CW);
+        areaRect.thePaint.setStyle(Paint.Style.FILL_AND_STROKE); // solid
         if (isInEditMode()) {
             areaRect.thePaint.setColor(Color.GREEN);
             canvas.drawPath(areaRect.thePath, areaRect.thePaint);
@@ -528,6 +642,8 @@ public class LandscapeView  extends View {
                 canvas.drawPath(shadedareas[i].thePath, shadedareas[i].thePaint);
             }
             canvas.drawPath(whitelines.thePath, whitelines.thePaint);
+            // v2 works but way too slow
+            // drawShaded2(canvas, delta, wx, wy);
         }
 
         boolean hasWater = LandscapeData.getLandscape().hasWater();
@@ -583,6 +699,10 @@ public class LandscapeView  extends View {
         shadedareas[1].thePaint.setColor(Color.rgb(10, 200, 10));
         shadedareas[2].thePaint.setColor(Color.rgb(10, 180, 10));
         shadedareas[3].thePaint.setColor(Color.rgb(10, 150, 10));
+
+        // shadeddraw.thePath = new Path();
+        // shadeddraw.thePaint = new Paint();
+        // shadeddraw.thePaint.setAntiAlias(false);
 
         // blue river
         riverlines.thePath = new Path();
