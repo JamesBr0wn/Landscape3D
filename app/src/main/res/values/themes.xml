@@ -5,6 +5,8 @@
         <!-- parent="Theme.AppCompat.NoActionBar" (works, smaller fonts, dark actionbar) -->
         <!-- parent="Theme.AppCompat.DayNight.NoActionBar" (works, smaller fonts, light) -->
         <!-- parent="Theme.Material3.DayNight.NoActionBar" (original generated)-->
+        <!-- parent="Theme.Material3.DynamicColors.Dark.NoActionBar" (more colorful buttons) -->
+        <!-- parent="Theme.Material3Expressive.DynamicColors.Dark.NoActionBar" (more colorful buttons) -->
     </style>
 
     <style name="Theme.Landscape3D" parent="Base.Theme.Landscape3D" />
