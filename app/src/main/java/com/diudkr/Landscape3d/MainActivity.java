@@ -3,6 +3,7 @@ package com.diudkr.Landscape3d;
 import android.content.Context;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.text.method.LinkMovementMethod;
 import android.util.Log;
 import android.view.GestureDetector;
 import android.view.Gravity;
@@ -17,6 +18,7 @@ import android.widget.Button;
 import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
@@ -202,6 +204,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         // Finally, show the popup window at the center location of root relative layout
         View mMainContainer = findViewById(R.id.main);
         mPopupWindow.showAtLocation(mMainContainer, Gravity.CENTER,0,0);
+        // Note: for unknown reasons, the url navifation does not work in the emulator
     }
 
     /////////////////// UI elements (Buttons etc) handlers

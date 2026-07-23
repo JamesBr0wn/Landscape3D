@@ -1,8 +1,9 @@
 <resources>
-    <string name="app_name">Landscapes 3D v015</string>
+    <string name="app_name">Fractal Landscapes 3D v017</string>
     <string name="mi_about_txt">About…</string>
     <string name="mi_close_btn">Close App</string>
     <string name="about_popup_txt">Graphics demo written by DK</string>
+    <string name="about_popup_sources">Sources here: https://github.com/JamesBr0wn/Landscape3D</string>
     <string name="about_popup_close_btn">Close</string>
     <string name="txt_max_detail_toast">Maximum detail level %1$s reached!
       \nAdd water effects if at the highest level - try it!</string>

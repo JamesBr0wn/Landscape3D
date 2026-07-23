@@ -8,22 +8,29 @@
     android:layout_alignParentTop="true"
     android:background="@android:color/darker_gray">
 
-    <TextView
-        android:id="@+id/about_popup_textView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:text="@string/about_popup_txt" />
-
-    <Button
-        android:id="@+id/about_popup_close_btn"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/about_popup_textView"
-        android:layout_alignParentStart="false"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="false"
-        android:text="@string/about_popup_close_btn"
-        android:textAllCaps="false" />
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/about_popup_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/about_popup_txt" />
+
+        <TextView
+            android:id="@+id/about_popup_sources"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:autoLink="web"
+            android:text="@string/about_popup_sources" />
+
+        <Button
+            android:id="@+id/about_popup_close_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/about_popup_close_btn"
+            android:textAllCaps="false" />
+    </LinearLayout>
 </RelativeLayout>
