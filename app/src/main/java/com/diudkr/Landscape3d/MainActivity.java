@@ -1,9 +1,7 @@
 package com.diudkr.Landscape3d;
 
-import android.content.Context;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
-import android.text.method.LinkMovementMethod;
 import android.util.Log;
 import android.view.GestureDetector;
 import android.view.Gravity;
@@ -18,7 +16,6 @@ import android.widget.Button;
 import android.widget.PopupWindow;
 import android.widget.RelativeLayout;
 import android.widget.Spinner;
-import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
@@ -109,7 +106,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         doHide();
         Log.i("diudkr", "MainActivity.onCreate2");
         // Toolbar
-        mToolbar = (Toolbar) findViewById(R.id.my_toolbar);
+        mToolbar = findViewById(R.id.my_toolbar);
         setSupportActionBar(mToolbar);
         mDetector = new GestureDetectorCompat(this, new MyGestureListener());
 
@@ -136,7 +133,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         LandscapeData.getLandscape().calculateLandscape();
         mViewSettings.setDetailLevel(LandscapeData.MAX_DETAIL - 1);
         // Drawing method spinner
-        Spinner spn = (Spinner) ViewSettings.getViewSettings().getMainActivity().findViewById(R.id.spnDrawmethod);
+        Spinner spn = ViewSettings.getViewSettings().getMainActivity().findViewById(R.id.spnDrawmethod);
         if (null != spn) {
             ArrayAdapter<String> adapter;
             adapter = new ArrayAdapter<>(ViewSettings.getViewSettings().getMainActivity(),
