@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/howto_popup_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_alignParentStart="true"
+    android:layout_alignParentTop="true"
+    android:background="@android:color/darker_gray">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/howto_popup_txt1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/howto_popup_txt1" />
+
+        <Space
+            android:id="@+id/howto_popup_space1"
+            android:layout_width="wrap_content"
+            android:layout_height="20px" />
+
+        <TextView
+            android:id="@+id/howto_popup_intro_txt1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/howto_popup_intro1" />
+
+        <TextView
+            android:id="@+id/howto_popup_intro_txt2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/howto_popup_intro2" />
+
+        <TextView
+            android:id="@+id/howto_popup_intro_txt3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/howto_popup_intro3" />
+
+        <TextView
+            android:id="@+id/howto_popup_intro_txt4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/howto_popup_intro4" />
+
+        <Button
+            android:id="@+id/howto_popup_close_btn1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/about_popup_close_btn" />
+    </LinearLayout>
+</RelativeLayout>

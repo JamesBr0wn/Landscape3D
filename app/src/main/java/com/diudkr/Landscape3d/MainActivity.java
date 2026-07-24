@@ -31,7 +31,8 @@ import com.diudkr.Landscape3D.R;
 
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
-    PopupWindow mPopupWindow = null;
+    PopupWindow mAboutPopupWindow = null;
+    PopupWindow mHowtoPopupWindow = null;
     Toolbar mToolbar = null;
     ViewSettings mViewSettings = null;
 
@@ -177,31 +178,57 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         decorView.setSystemUiVisibility(uiOptions);
     }
 
-    void showPopup() {
+    void showAboutPopup() {
         // Inflate the popup view
         LayoutInflater inflater = (LayoutInflater) getApplicationContext().getSystemService(LAYOUT_INFLATER_SERVICE);
         View popupView = inflater.inflate(R.layout.aboutpopup, null);
 
         // Initialize a new instance of popup window
-        mPopupWindow = new PopupWindow(
+        mAboutPopupWindow = new PopupWindow(
                 popupView,
                 RelativeLayout.LayoutParams.WRAP_CONTENT,
                 RelativeLayout.LayoutParams.WRAP_CONTENT
         );
 
-        mPopupWindow.setElevation(5.0f);
+        mAboutPopupWindow.setElevation(5.0f);
         Button closeButton = popupView.findViewById(R.id.about_popup_close_btn);
         closeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mPopupWindow.dismiss();
+                mAboutPopupWindow.dismiss();
             }
         });
 
         // Finally, show the popup window at the center location of root relative layout
         View mMainContainer = findViewById(R.id.main);
-        mPopupWindow.showAtLocation(mMainContainer, Gravity.CENTER,0,0);
-        // Note: for unknown reasons, the url navifation does not work in the emulator
+        mAboutPopupWindow.showAtLocation(mMainContainer, Gravity.CENTER,0,0);
+        // Note: for unknown reasons, the url navigation does not work in the emulator
+    }
+
+    void showHowtoPopup() {
+        // Inflate the popup view
+        LayoutInflater inflater = (LayoutInflater) getApplicationContext().getSystemService(LAYOUT_INFLATER_SERVICE);
+        View popupView = inflater.inflate(R.layout.howtopopup, null);
+
+        // Initialize a new instance of popup window
+        mHowtoPopupWindow = new PopupWindow(
+                popupView,
+                RelativeLayout.LayoutParams.WRAP_CONTENT,
+                RelativeLayout.LayoutParams.WRAP_CONTENT
+        );
+
+        mHowtoPopupWindow.setElevation(5.0f);
+        Button closeButton = popupView.findViewById(R.id.howto_popup_close_btn1);
+        closeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mHowtoPopupWindow.dismiss();
+            }
+        });
+
+        // Finally, show the popup window at the center location of root relative layout
+        View mMainContainer = findViewById(R.id.main);
+        mHowtoPopupWindow.showAtLocation(mMainContainer, Gravity.CENTER,0,0);
     }
 
     /////////////////// UI elements (Buttons etc) handlers
@@ -210,7 +237,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         // system menu (...) commands
         int id = item.getItemId();
         if (R.id.mi_about == id) {
-            this.showPopup();
+            this.showAboutPopup();
+            return true;
+        }
+        if (R.id.mi_howto == id) {
+            this.showHowtoPopup();
             return true;
         }
         if (R.id.mi_close == id) {
