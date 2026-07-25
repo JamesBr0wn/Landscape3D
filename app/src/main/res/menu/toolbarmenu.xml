@@ -12,7 +12,7 @@
     <item
         android:id="@+id/mi_howto"
         android:title="@string/mi_howto_txt"
-        app:showAsAction="never" />
+        app:showAsAction="ifRoom" />
     <item
         android:id="@+id/mi_close"
         android:title="@string/mi_close_btn"
