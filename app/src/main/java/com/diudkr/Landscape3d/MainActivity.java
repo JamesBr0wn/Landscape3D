@@ -179,6 +179,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     }
 
     void showAboutPopup() {
+        if ( (null != mAboutPopupWindow) || (null != mHowtoPopupWindow) ){
+            return; // only one please
+        }
         // Inflate the popup view
         LayoutInflater inflater = (LayoutInflater) getApplicationContext().getSystemService(LAYOUT_INFLATER_SERVICE);
         View popupView = inflater.inflate(R.layout.aboutpopup, null);
@@ -196,6 +199,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             @Override
             public void onClick(View view) {
                 mAboutPopupWindow.dismiss();
+                mAboutPopupWindow = null;
             }
         });
 
@@ -206,6 +210,9 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     }
 
     void showHowtoPopup() {
+        if ( (null != mAboutPopupWindow) || (null != mHowtoPopupWindow) ){
+            return; // only one please
+        }
         // Inflate the popup view
         LayoutInflater inflater = (LayoutInflater) getApplicationContext().getSystemService(LAYOUT_INFLATER_SERVICE);
         View popupView = inflater.inflate(R.layout.howtopopup, null);
@@ -223,6 +230,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             @Override
             public void onClick(View view) {
                 mHowtoPopupWindow.dismiss();
+                mHowtoPopupWindow = null;
             }
         });
 

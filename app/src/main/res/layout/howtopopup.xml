@@ -22,7 +22,7 @@
         <Space
             android:id="@+id/howto_popup_space1"
             android:layout_width="wrap_content"
-            android:layout_height="20px" />
+            android:layout_height="15dp" />
 
         <TextView
             android:id="@+id/howto_popup_intro_txt1"
@@ -47,6 +47,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:srcCompat="@drawable/img_details_s" />
+
+        <Space
+            android:id="@+id/howto_popup_space2"
+            android:layout_width="wrap_content"
+            android:layout_height="10dp" />
 
         <TextView
             android:id="@+id/howto_popup_intro_txt4"

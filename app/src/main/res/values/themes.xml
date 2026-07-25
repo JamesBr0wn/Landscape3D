@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.Landscape3D" parent="Theme.Material3.DynamicColors.Dark.NoActionBar">
+    <style name="Base.Theme.Landscape3D" parent="Theme.Material3.Dark.NoActionBar">
         <!-- parent="Theme.Material3.Dark.NoActionBar"> (works, dark) -->
         <!-- parent="Theme.AppCompat.NoActionBar" (works, smaller fonts, dark actionbar) -->
         <!-- parent="Theme.AppCompat.DayNight.NoActionBar" (works, smaller fonts, light) -->
