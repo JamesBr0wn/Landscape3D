@@ -8,84 +8,99 @@
     android:layout_alignParentTop="true"
     android:background="@android:color/darker_gray">
 
-    <LinearLayout
+    <ScrollView
+        android:id="@+id/howto_popup_scrollview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:scrollbarAlwaysDrawVerticalTrack="true"
+        android:scrollbarStyle="outsideInset">
 
-        <TextView
-            android:id="@+id/howto_popup_txt1"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/howto_popup_txt1" />
+            android:orientation="vertical">
 
-        <Space
-            android:id="@+id/howto_popup_space1"
-            android:layout_width="wrap_content"
-            android:layout_height="15dp" />
+            <TextView
+                android:id="@+id/howto_popup_txt1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/howto_popup_txt1" />
 
-        <TextView
-            android:id="@+id/howto_popup_intro_txt1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/howto_popup_intro1" />
+            <Button
+                android:id="@+id/howto_popup_close_btn2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/about_popup_close_btn2" />
 
-        <TextView
-            android:id="@+id/howto_popup_intro_txt2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/howto_popup_intro2" />
+            <Space
+                android:id="@+id/howto_popup_space1"
+                android:layout_width="wrap_content"
+                android:layout_height="15dp" />
 
-        <TextView
-            android:id="@+id/howto_popup_intro_txt3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/howto_popup_intro3" />
+            <TextView
+                android:id="@+id/howto_popup_intro_txt1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/howto_popup_intro1" />
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/img_detaillevel"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:srcCompat="@drawable/img_details_s" />
+            <TextView
+                android:id="@+id/howto_popup_intro_txt2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/howto_popup_intro2" />
 
-        <Space
-            android:id="@+id/howto_popup_space2"
-            android:layout_width="wrap_content"
-            android:layout_height="10dp" />
+            <TextView
+                android:id="@+id/howto_popup_intro_txt3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/howto_popup_intro3" />
 
-        <TextView
-            android:id="@+id/howto_popup_intro_txt4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/howto_popup_intro4" />
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img_detaillevel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/img_details_s" />
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/img_watereffects"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:srcCompat="@drawable/img_waters_s" />
+            <Space
+                android:id="@+id/howto_popup_space2"
+                android:layout_width="wrap_content"
+                android:layout_height="10dp" />
 
-        <Space
-            android:id="@+id/howto_popup_space3"
-            android:layout_width="wrap_content"
-            android:layout_height="10dp" />
+            <TextView
+                android:id="@+id/howto_popup_intro_txt4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/howto_popup_intro4" />
 
-        <TextView
-            android:id="@+id/howto_popup_intro_disp1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/howto_popup_draw_meth1" />
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img_watereffects"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/img_waters_s" />
 
-        <ImageView
-            android:id="@+id/img_displaymodes"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:srcCompat="@drawable/img_dispmodes_s" />
+            <Space
+                android:id="@+id/howto_popup_space3"
+                android:layout_width="wrap_content"
+                android:layout_height="10dp" />
 
-        <Button
-            android:id="@+id/howto_popup_close_btn1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/about_popup_close_btn" />
-    </LinearLayout>
+            <TextView
+                android:id="@+id/howto_popup_intro_disp1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/howto_popup_draw_meth1" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img_displaymodes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/img_dispmodes_s" />
+
+            <Button
+                android:id="@+id/howto_popup_close_btn1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/about_popup_close_btn" />
+        </LinearLayout>
+    </ScrollView>
+
 </RelativeLayout>

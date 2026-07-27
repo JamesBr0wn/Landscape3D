@@ -233,6 +233,14 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 mHowtoPopupWindow = null;
             }
         });
+        Button closeButton2 = popupView.findViewById(R.id.howto_popup_close_btn2);
+        closeButton2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mHowtoPopupWindow.dismiss();
+                mHowtoPopupWindow = null;
+            }
+        });
 
         // Finally, show the popup window at the center location of root relative layout
         View mMainContainer = findViewById(R.id.main);
