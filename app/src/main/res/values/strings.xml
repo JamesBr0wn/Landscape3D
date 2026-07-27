@@ -7,12 +7,13 @@
     <string name="about_popup_sources">Sources here: https://github.com/JamesBr0wn/Landscape3D</string>
     <string name="about_popup_close_btn">Close</string>
     <string name="howto_popup_txt1">Here\'s how to use the app:</string>
-    <string name="howto_popup_intro1">The app calculates on startup or with any click on New a new fractal landscape.</string>
+    <string name="howto_popup_intro1">The app calculates on startup (or with any click on New) a new fractal landscape.</string>
     <string name="howto_popup_intro2">Two modes are available:</string>
     <string name="howto_popup_intro3">1) You can increase or decrease the detail level to see how the fractal effect grows. You can swipe up and down, too</string>
     <string name="howto_popup_intro4">2) On the highest detail level you can then add water effects</string>
     <string name="howto_popup_seq1">Increase or decrease the detail level</string>
     <string name="howto_popup_seq2">and see how the landscape shapes up:</string>
+    <string name="howto_popup_draw_meth1">The app uses a parallel projection. You can choose from various display modes (or swipe right or left):</string>
     <string name="txt_max_detail_toast">Maximum detail level %1$s reached!
       \nAdd water effects if at the highest level - try it!</string>
     <string name="txt_min_detail_toast">Min detail level: 0</string>
@@ -25,7 +26,7 @@
     <string name="labWater">Add Water</string>
     <string name="btn5Rivers">Fountains</string>
     <string name="btnFlood">Flood</string>
-    <string name="spnPrompt">Draw like</string>
+    <string name="spnPrompt">Display using:</string>
     <string name="btnDrawPoints">Small Points</string>
     <string name="btnDrawBigPoints">Big Points</string>
     <string name="btnDrawLinesX">Lines X</string>

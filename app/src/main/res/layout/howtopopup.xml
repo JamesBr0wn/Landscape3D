@@ -65,6 +65,23 @@
             android:layout_height="wrap_content"
             app:srcCompat="@drawable/img_waters_s" />
 
+        <Space
+            android:id="@+id/howto_popup_space3"
+            android:layout_width="wrap_content"
+            android:layout_height="10dp" />
+
+        <TextView
+            android:id="@+id/howto_popup_intro_disp1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/howto_popup_draw_meth1" />
+
+        <ImageView
+            android:id="@+id/img_displaymodes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/img_dispmodes_s" />
+
         <Button
             android:id="@+id/howto_popup_close_btn1"
             android:layout_width="wrap_content"
