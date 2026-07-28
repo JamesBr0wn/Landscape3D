@@ -187,9 +187,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         View popupView = inflater.inflate(R.layout.aboutpopup, null);
 
         // Initialize a new instance of popup window
+        int width = getWindow().getDecorView().getWidth();
         mAboutPopupWindow = new PopupWindow(
                 popupView,
-                RelativeLayout.LayoutParams.WRAP_CONTENT,
+                width / 4 * 3,
+                // RelativeLayout.LayoutParams.WRAP_CONTENT,
                 RelativeLayout.LayoutParams.WRAP_CONTENT
         );
 
@@ -218,9 +220,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         View popupView = inflater.inflate(R.layout.howtopopup, null);
 
         // Initialize a new instance of popup window
+        int width = getWindow().getDecorView().getWidth();
         mHowtoPopupWindow = new PopupWindow(
                 popupView,
-                RelativeLayout.LayoutParams.WRAP_CONTENT,
+                // RelativeLayout.LayoutParams.WRAP_CONTENT,
+                width / 4 * 3,
                 RelativeLayout.LayoutParams.WRAP_CONTENT
         );
 

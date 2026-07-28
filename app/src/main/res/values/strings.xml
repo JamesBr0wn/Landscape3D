@@ -10,7 +10,7 @@
     <string name="howto_popup_txt1">Here\'s how to use the app:</string>
     <string name="howto_popup_intro1">The app calculates on startup (or with any click on New) a new fractal landscape.</string>
     <string name="howto_popup_intro2">Two modes are available:</string>
-    <string name="howto_popup_intro3">1) You can increase or decrease the detail level to see how the fractal effect grows. You can swipe up and down, too</string>
+    <string name="howto_popup_intro3">1) You can increase or decrease the detail level from 0 to 8 to see how the fractal effect grows. You can swipe up and down, too</string>
     <string name="howto_popup_intro4">2) On the highest detail level you can then add water effects</string>
     <string name="howto_popup_seq1">Increase or decrease the detail level</string>
     <string name="howto_popup_seq2">and see how the landscape shapes up:</string>

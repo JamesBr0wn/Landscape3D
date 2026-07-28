@@ -16,14 +16,16 @@
             android:id="@+id/about_popup_textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/about_popup_txt" />
+            android:text="@string/about_popup_txt"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
         <TextView
             android:id="@+id/about_popup_sources"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:autoLink="web"
-            android:text="@string/about_popup_sources" />
+            android:text="@string/about_popup_sources"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
         <Button
             android:id="@+id/about_popup_close_btn"
